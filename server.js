@@ -1,7 +1,7 @@
 const express = require('express') 
 require('dotenv').config()
 const app = express()  
-const port = process.env.PORT || 3003
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -17,6 +17,6 @@ app.get('/pokemon', (req, res) => {
 app.get('/pokemon/:id', (req, res) => {
     res.render('Show', {pokemon:pokemon[req.params.id]})
 })
-app.listen(3000, function() {
+app.listen(port, function() {
     console.log('Listening on port', port)
 })
